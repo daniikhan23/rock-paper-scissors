@@ -1,4 +1,10 @@
-// function to get computer's choice of options
+// function to get user's choice of option
+function askUser() {
+  const playerSelection = prompt("Please enter your choice of Rock, Paper or Scissors!");
+  return playerSelection;
+}
+
+// function to get computer's choice of option
 
 function getComputerChoice() {
   let num = Math.floor(Math.random() * 3) + 1;
@@ -18,7 +24,10 @@ function game() {
 
   function playRound(playerSelection, computerSelection) {
     let playerChoice = playerSelection.toUpperCase();
+    console.log("Player's Choice: " + playerChoice);
     let computerChoice = computerSelection.toUpperCase();
+    console.log("Computer's Choice: " + computerChoice);
+
 
     if (playerChoice === "ROCK" || playerChoice === "PAPER" || playerChoice === "SCISSORS"){
     
@@ -71,12 +80,11 @@ function game() {
     }
   }
   
-  const playerSelection = prompt("Please enter your choice of Rock, Paper or Scissors!");
-  console.log("Player's Choice: " + playerSelection)
-  const computerSelection = getComputerChoice();
-  console.log("Computer's Choice: " + computerSelection);
-  
-  console.log(playRound(playerSelection, computerSelection));
+  console.log(playRound(askUser(), getComputerChoice()));
+  console.log(playRound(askUser(), getComputerChoice()));
+  console.log(playRound(askUser(), getComputerChoice()));
+  console.log(playRound(askUser(), getComputerChoice()));
+  console.log(playRound(askUser(), getComputerChoice()));
 }
 
 game();
