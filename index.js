@@ -22,6 +22,7 @@ function game() {
 
   let userScore = 0;
   let computerScore = 0;
+  let gameRounds = 0;
 
   function playRound(playerSelection, computerSelection) {
     let playerChoice = playerSelection.toUpperCase();
@@ -81,11 +82,10 @@ function game() {
       }
     }
 
-    console.log(playRound(askUser(), getComputerChoice()));
-    console.log(playRound(askUser(), getComputerChoice()));
-    console.log(playRound(askUser(), getComputerChoice()));
-    console.log(playRound(askUser(), getComputerChoice()));
-    console.log(playRound(askUser(), getComputerChoice()));
+    while (gameRounds < 5) {
+      console.log(playRound(askUser(), getComputerChoice()));
+      gameRounds += 1;
+    }
 
     if (userScore > computerScore) {
       alert("You won! " + "Your Score: " + userScore + ", Computer's Score: " + computerScore);
