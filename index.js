@@ -22,13 +22,24 @@ function game() {
   
     while (playerChoice === "ROCK") {
       if (computerChoice === "ROCK") {
-        return "Tie! You must try again" + " You: " + userScore + " Computer: " + computerScore;
+        return "Tie! You must try again" + ", You: " + userScore + ", Computer: " + computerScore;
       } else if (computerChoice === "PAPER") {
         computerScore += 1;
-        return "You Lost! Paper beats Rock!" + " You: " + userScore + " Computer: " + computerScore;
+        return "You Lost! Paper beats Rock!" + ", You: " + userScore + ", Computer: " + computerScore;
       } else {
         userScore += 1;
-        return "Congratulations! Rock destroys Scissors!" + " You: " + userScore + " Computer: " + computerScore;
+        return "Congratulations! Rock destroys Scissors!" + ", You: " + userScore + ", Computer: " + computerScore;
+      }
+    }
+    while (playerChoice === "PAPER") {
+      if (computerChoice === "ROCK") {
+        userScore += 1;
+        return "Congratulations! Paper smothered Rock to death" + ", You: " + userScore + ", Computer: " + computerScore;
+      } else if (computerChoice === "PAPER") {
+        return "Tie! You must try again" + " You: " + userScore + ", Computer: " + computerScore;
+      } else {
+        computerScore += 1;
+        return "You Lost! Scissors cut up Paper" + ", You: " + userScore + ", Computer: " + computerScore;
       }
     }
   }
