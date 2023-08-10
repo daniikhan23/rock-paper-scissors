@@ -17,7 +17,7 @@ function getComputerChoice() {
   }
 }
 
-// Function to actually play the game and appropriately determin winner
+// Function to actually play the game and appropriately determine winner
 function game() {
 
   let userScore = 0;
@@ -25,10 +25,22 @@ function game() {
   let gameRounds = 0;
 
   function playRound(playerSelection, computerSelection) {
-    let playerChoice = playerSelection.toUpperCase();
-    console.log("Player's Choice: " + playerChoice);
-    let computerChoice = computerSelection.toUpperCase();
-    console.log("Computer's Choice: " + computerChoice);
+    let playerChoice = undefined;
+    let computerChoice;
+
+    if (playerSelection === null || playerSelection === "") {
+      return "Please enter a valid choice";
+    } 
+    else {
+      playerChoice = playerSelection.toUpperCase();
+      console.log("Player's Choice: " + playerChoice);
+      alert("Player's Choice: " + playerChoice);
+
+      computerChoice = computerSelection.toUpperCase();
+      console.log("Computer's Choice: " + computerChoice);
+      alert("Computer's Choice: " + computerChoice);
+    }
+    
 
     // Check to see correct input
     if (playerChoice === "ROCK" || playerChoice === "PAPER" || playerChoice === "SCISSORS"){
@@ -49,7 +61,7 @@ function game() {
       }
 
       //Player Choice : Paper
-      if (playerChoice === "PAPER") {
+      else if (playerChoice === "PAPER") {
         if (computerChoice === "ROCK") {
           userScore += 1;
           return "Congratulations! Paper smothered Rock to death" + ", You: " + userScore + ", Computer: " + computerScore;
@@ -64,7 +76,7 @@ function game() {
       }
 
       //Player Choice : Scissors
-      if (playerChoice === "SCISSORS") {
+      else if (playerChoice === "SCISSORS") {
         if (computerChoice === "ROCK") {
           computerScore += 1;
           return "You Lost! Rock destroys Scissors" + ", You: " + userScore + ", Computer: " + computerScore;
@@ -77,20 +89,21 @@ function game() {
           return "Tie! You must try again" + ", You: " + userScore + ", Computer: " + computerScore;
         }
       }
-      } else {
-        return "Please enter a valid choice";
-      }
     }
+    else {
+      return "Please enter a valid choice";
+    }
+  }
 
     while (gameRounds < 5) {
-      console.log(playRound(askUser(), getComputerChoice()));
+      alert(playRound(askUser(), getComputerChoice()));
       gameRounds += 1;
     }
 
     if (userScore > computerScore) {
-      alert("You won! " + "Your Score: " + userScore + ", Computer's Score: " + computerScore);
+      alert("You won the game! " + "Your Score: " + userScore + ", Computer's Score: " + computerScore);
     } else if (userScore < computerScore) {
-      alert("You Lost! " + "Your Score: " + userScore + ", Computer's Score: " + computerScore);
+      alert("You Lost the game! " + "Your Score: " + userScore + ", Computer's Score: " + computerScore);
     } else {
       alert("Seriously? A tie? How Disappointing " + "Your Score: " + userScore + ", Computer's Score: " + computerScore);
     }
