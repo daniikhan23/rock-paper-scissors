@@ -7,6 +7,7 @@ let playerShow = document.getElementById('player-choice');
 let compShow = document.getElementById('computer-choice');
 let para = document.getElementById('result');
 let finalScore = document.getElementById('final-score');
+let newGame = document.getElementById('new-game');
 
 
 const btnRock = document.getElementById('btn-rock');
@@ -43,24 +44,28 @@ function endOfGame(gameRounds) {
   if (gameRounds == 5) {
     if (userScore > computerScore) {
       finalScore.textContent = "You won the game! " + getScore(userScore, computerScore);
+      newGame.textContent = "Start New Game - Pick an option";
       userScore = 0;
       computerScore = 0;
       gameRounds = 1;
   
     } else if (userScore < computerScore) {
-      finalScore.textContent = "You Lost the game! " + getScore(userScore, computerScore);
+      finalScore.textContent = "You Lost the game! " + getScore(userScore, computerScore)
+      newGame.textContent = "Start New Game - Pick an option";
       userScore = 0;
       computerScore = 0;
       gameRounds = 1;
   
     } else {
       finalScore.textContent = "Seriously? A tie? How Disappointing " + getScore(userScore, computerScore);
+      newGame.textContent = "Start New Game - Pick an option";
       userScore = 0;
       computerScore = 0;
       gameRounds = 1;
     }
   } else {
     finalScore.textContent = "";
+    newGame.textContent = "";
   }
 }
 
