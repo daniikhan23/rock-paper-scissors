@@ -42,11 +42,9 @@ function game() {
     else {
       playerChoice = playerSelection.toUpperCase();
       console.log("Player's Choice: " + playerChoice);
-      alert("Player's Choice: " + playerChoice);
 
       computerChoice = computerSelection.toUpperCase();
       console.log("Computer's Choice: " + computerChoice);
-      alert("Computer's Choice: " + computerChoice);
     }
     
 
@@ -103,17 +101,17 @@ function game() {
     }
   }
 
-    while (gameRounds <= 5) {
-      alert(playRound(getUserChoice(), getComputerChoice()));
+    while (gameRounds <= 1) {
+      console.log(playRound(getUserChoice(), getComputerChoice()));
       gameRounds += 1;
     }
 
     if (userScore > computerScore) {
-      alert("You won the game! " + getScore(userScore, computerScore));
+      console.log("You won the game! " + getScore(userScore, computerScore));
     } else if (userScore < computerScore) {
-      alert("You Lost the game! " + getScore(userScore, computerScore));
+      console.log("You Lost the game! " + getScore(userScore, computerScore));
     } else {
-      alert("Seriously? A tie? How Disappointing " + getScore(userScore, computerScore));
+      console.log("Seriously? A tie? How Disappointing " + getScore(userScore, computerScore));
     }
 }
 
