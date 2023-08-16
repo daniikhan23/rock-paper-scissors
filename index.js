@@ -2,22 +2,30 @@ let userScore = 0;
 let computerScore = 0;
 let gameRounds = 1;
 
-
+// creating variables to store text data in relevant fields 
 let playerShow = document.getElementById('player-choice');
 let compShow = document.getElementById('computer-choice');
 let para = document.getElementById('result');
 let finalScore = document.getElementById('final-score');
 let newGame = document.getElementById('new-game');
 
-
+// variables to store user choice on button press
 const btnRock = document.getElementById('btn-rock');
-console.log(btnRock);
 const btnPaper = document.getElementById('btn-paper');
-console.log(btnPaper);
 const btnScissors = document.getElementById('btn-scissors');
-console.log(btnScissors);
 
+// Reset Scores to 0
+function resetGame() {
+  userScore = 0;
+  computerScore = 0;
+}
 
+// Resets round counter to 0
+function resetRounds() {
+  if (gameRounds > 5) {
+    gameRounds = 1;
+  }
+}
 
 // function to get computer's choice of option
 function getComputerChoice() {
@@ -44,24 +52,18 @@ function endOfGame(gameRounds) {
   if (gameRounds == 5) {
     if (userScore > computerScore) {
       finalScore.textContent = "You won the game! " + getScore(userScore, computerScore);
-      newGame.textContent = "Start New Game - Pick an option";
-      userScore = 0;
-      computerScore = 0;
-      gameRounds = 1;
+      newGame.textContent = "Start New Game - Pick an option!";
+      resetGame();
   
     } else if (userScore < computerScore) {
       finalScore.textContent = "You Lost the game! " + getScore(userScore, computerScore)
-      newGame.textContent = "Start New Game - Pick an option";
-      userScore = 0;
-      computerScore = 0;
-      gameRounds = 1;
+      newGame.textContent = "Start New Game - Pick an option!";
+      resetGame();
   
     } else {
       finalScore.textContent = "Seriously? A tie? How Disappointing " + getScore(userScore, computerScore);
-      newGame.textContent = "Start New Game - Pick an option";
-      userScore = 0;
-      computerScore = 0;
-      gameRounds = 1;
+      newGame.textContent = "Start New Game - Pick an option!";
+      resetGame();
     }
   } else {
     finalScore.textContent = "";
@@ -129,16 +131,13 @@ function game() {
   // Handling Rock selection on button press
   btnRock.addEventListener('click', () => {
     const playerSelection = 'rock';
-    console.log(playerSelection);
     const computerChoice = getComputerChoice();
     playerShow.textContent = "Player's Choice: Rock";
     compShow.textContent = "Computer's Choice: " + computerChoice;
     para.textContent = playRound(playerSelection, computerChoice);
     endOfGame(gameRounds);
     gameRounds += 1;
-    if (gameRounds > 5) {
-      gameRounds = 1;
-    }
+    resetRounds();
     
   });
 
@@ -146,32 +145,26 @@ function game() {
   // Handling Paper selection on button press
   btnPaper.addEventListener('click', () => {
     const playerSelection = 'paper';
-    console.log(playerSelection);
     const computerChoice = getComputerChoice();
     playerShow.textContent = "Player's Choice: Paper";
     compShow.textContent = "Computer's Choice: " + computerChoice;
     para.textContent = playRound(playerSelection, computerChoice);
     endOfGame(gameRounds);
     gameRounds += 1;
-    if (gameRounds > 5) {
-      gameRounds = 1;
-    }
+    resetRounds();
   });
 
 
   // Handling Scissors selection on button press
   btnScissors.addEventListener('click', () => {
     const playerSelection = 'scissors';
-    console.log(playerSelection);
     const computerChoice = getComputerChoice();
     playerShow.textContent = "Player's Choice: Scissors";
     compShow.textContent = "Computer's Choice: " + computerChoice;
     para.textContent = playRound(playerSelection, computerChoice);
     endOfGame(gameRounds);
     gameRounds += 1;
-    if (gameRounds > 5) {
-      gameRounds = 1;
-    }
+    resetRounds();
   });
 }
 
