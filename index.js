@@ -59,6 +59,8 @@ function endOfGame(gameRounds) {
       computerScore = 0;
       gameRounds = 1;
     }
+  } else {
+    finalScore.textContent = "";
   }
 }
 
@@ -129,6 +131,9 @@ function game() {
     para.textContent = playRound(playerSelection, computerChoice);
     endOfGame(gameRounds);
     gameRounds += 1;
+    if (gameRounds > 5) {
+      gameRounds = 1;
+    }
     
   });
 
@@ -143,6 +148,9 @@ function game() {
     para.textContent = playRound(playerSelection, computerChoice);
     endOfGame(gameRounds);
     gameRounds += 1;
+    if (gameRounds > 5) {
+      gameRounds = 1;
+    }
   });
 
 
@@ -156,6 +164,9 @@ function game() {
     para.textContent = playRound(playerSelection, computerChoice);
     endOfGame(gameRounds);
     gameRounds += 1;
+    if (gameRounds > 5) {
+      gameRounds = 1;
+    }
   });
 }
 
