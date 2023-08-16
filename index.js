@@ -1,13 +1,3 @@
-
-
-
-
-// function to get user's choice of option
-function getUserChoice() {
-  //const playerSelection = prompt("Please enter your choice of Rock, Paper or Scissors!");
-  return playerSelection;
-}
-
 // function to get computer's choice of option
 
 function getComputerChoice() {
@@ -31,20 +21,12 @@ function getScore(userScore, computerScore) {
 
 // Round functions
 function playRound(playerSelection, computerSelection) {
-  let playerChoice = undefined;
+  let playerChoice;
   let computerChoice;
-
-  if (playerSelection === null || playerSelection === "") {
-    return "Please enter a valid choice";
-  } 
-  else {
-    playerChoice = playerSelection.toUpperCase();
-    console.log("Player's Choice: " + playerChoice);
-
-    computerChoice = computerSelection.toUpperCase();
-    console.log("Computer's Choice: " + computerChoice);
-  }
   
+  playerChoice = playerSelection.toUpperCase();
+  computerChoice = computerSelection.toUpperCase();
+
 
   // Check to see correct input
   if (playerChoice === "ROCK" || playerChoice === "PAPER" || playerChoice === "SCISSORS"){
@@ -127,7 +109,13 @@ function game() {
 let userScore = 0;
 let computerScore = 0;
 let gameRounds = 1;
-const playerSelection = "";
+
+
+let playerShow = document.getElementById('player-choice');
+let compShow = document.getElementById('computer-choice');
+
+let para = document.getElementById('result');
+
 
 
 // Handling Rock selection on button press
@@ -137,5 +125,40 @@ console.log(btnRock);
 btnRock.addEventListener('click', () => {
   const playerSelection = 'rock';
   console.log(playerSelection);
-  console.log(playRound(playerSelection, getComputerChoice()));
+  const computerChoice = getComputerChoice();
+  playerShow.textContent = "Player's Choice: Rock";
+  compShow.textContent = "Computer's Choice: " + computerChoice;
+  para.textContent = playRound(playerSelection, computerChoice);
+  gameRounds += 1;
 });
+
+
+// Handling Paper selection on button press
+const btnPaper = document.getElementById('btn-paper');
+console.log(btnPaper);
+
+btnPaper.addEventListener('click', () => {
+  const playerSelection = 'paper';
+  console.log(playerSelection);
+  const computerChoice = getComputerChoice();
+  playerShow.textContent = "Player's Choice: Paper";
+  compShow.textContent = "Computer's Choice: " + computerChoice;
+  para.textContent = playRound(playerSelection, computerChoice);
+  gameRounds += 1;
+});
+
+
+// Handling Scissors selection on button press
+const btnScissors = document.getElementById('btn-scissors');
+console.log(btnScissors);
+
+btnScissors.addEventListener('click', () => {
+  const playerSelection = 'scissors';
+  console.log(playerSelection);
+  const computerChoice = getComputerChoice();
+  playerShow.textContent = "Player's Choice: Scissors";
+  compShow.textContent = "Computer's Choice: " + computerChoice;
+  para.textContent = playRound(playerSelection, computerChoice);
+  gameRounds += 1;
+});
+
