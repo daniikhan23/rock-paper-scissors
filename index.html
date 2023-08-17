@@ -22,7 +22,7 @@
         <nav class="navbar bg-body-tertiary">
           <div class="container-fluid">
             <span class="navbar-brand mb-0 h1 mx-auto">
-              <i class="fa-solid fa-font fa-xl" style="color: #a31414;">
+              <i class="fa-solid fa-font fa-xl" style="color: rgb(228,97,85);">
               Rock Paper Scissors
               </i> 
             </span>
@@ -31,15 +31,41 @@
       </div>
     </div>
 
+    <!--Main Section-->
+    <div class="main-section">
+      <div class="container-fluid">
+        <div class="container-score">
+          <div id="result"></div>
+          <div id="final-score"></div>
+          <div id="new-game"></div>
+        </div>
+        <div class="row text-center">
+          <div class="row text-center">
+            <div class="col-2">
+              <div id="player-choice"></div>
+            </div>
+            <div class="col-8 justify-content-center">
+              <img src="assets/images/colosseum.jpg" class="img-fluid" alt="...">
+            </div>
+            <div class="col-2">
+              <div id="computer-choice"></div>
+            </div>
+          </div>
+          <div class="col-6">
+            <i class="fa-solid fa-person-military-rifle fa-beat fa-2xl" style="color: #ff000d;"></i>
+          </div>
+          <div class="col-6">
+            <i class="fa-solid fa-robot fa-shake fa-2xl" style="color: #1e00ff;"></i>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+
+
     <button id="btn-rock">Rock</button>
     <button id="btn-paper">Paper</button>
     <button id="btn-scissors">Scissors</button>
-
-    <div id="player-choice"></div>
-    <div id="computer-choice"></div>
-    <div id="result"></div>
-    <div id="final-score"></div>
-    <div id="new-game"></div>
 
 	<script src="index.js"></script>
   </body>

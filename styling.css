@@ -78,21 +78,50 @@ button:hover {
   transition: all 0.3s ease-in;
 }
 
-/* Header */
+body {
+  background-color: rgb(228,97,85);
+}
+
+/* Header Section */
+
 .header-section .navbar .container-fluid{
-  background-color: #eab676;
-  margin-bottom: 5rem;
+  background-color: #72213e;
 }
 
 .header-section .navbar {
   padding-top: 0;
+  padding-bottom: 0;
 }
 
 .header-section .navbar-brand i {
   font-size: 5rem;
-  padding: 4rem 0;
+  padding: 5rem 0;
 }
 
 .header-section .navbar-brand .fa-font:before {
     content: none;
+}
+
+/* Main Section */
+
+.main-section .container-fluid .img-fluid {
+  border: 5px solid black;
+  padding: 0;
+  height: 50rem;
+}
+
+.main-section .container-fluid .fa-solid {
+  font-size: 10rem;
+  position: relative;
+  top: -10rem;
+}
+
+.main-section .container-fluid .container-score {
+  margin: 5rem;
+  text-align: center;
+}
+
+.main-section .container-fluid .row .col-2 {
+  align-items: center;
+  justify-content: center;
 }
