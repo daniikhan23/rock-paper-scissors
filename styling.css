@@ -107,6 +107,7 @@ body {
 .main-section .container-fluid .img-fluid {
   border: 5px solid black;
   padding: 0;
+  border-radius: 5%;
 }
 
 .main-section .container-fluid .fa-solid {
@@ -148,15 +149,17 @@ body {
   margin: auto 0;
 }
 
-.main-section .container-fluid .container-score .fa-solid .btn-new-game {
+.main-section .container-fluid .container-score .fa-solid .btn {
   background-color: #72213e;
   color: rgb(228,97,85);
+  font-size: 1.5rem;
 }
 
 /* Button Section */
 .button-section .container {
   text-align: center;
   margin-left: 10rem;
+  margin-bottom: 5rem;
 }
 
 .button-section .container .row .col .btn-rock:hover {

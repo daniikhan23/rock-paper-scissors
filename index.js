@@ -134,6 +134,7 @@ function game() {
     compShow.textContent = "";
     para.textContent = "Round 1";
     currentScore.textContent = "You 0 - 0 Computer";
+    finalScore.textContent = "";
   })
 
   // Handling Rock selection on button press
