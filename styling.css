@@ -77,3 +77,22 @@ button:hover {
   -moz-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
 }
+
+/* Header */
+.header-section .navbar .container-fluid{
+  background-color: #eab676;
+  margin-bottom: 5rem;
+}
+
+.header-section .navbar {
+  padding-top: 0;
+}
+
+.header-section .navbar-brand i {
+  font-size: 5rem;
+  padding: 4rem 0;
+}
+
+.header-section .navbar-brand .fa-font:before {
+    content: none;
+}
