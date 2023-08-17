@@ -6,8 +6,9 @@ let gameRounds = 1;
 let playerShow = document.getElementById('player-choice');
 let compShow = document.getElementById('computer-choice');
 let para = document.getElementById('result');
+let currentScore = document.getElementById('current-score');
 let finalScore = document.getElementById('final-score');
-let newGame = document.getElementById('new-game');
+const newGame = document.getElementById('btn-new-game');
 
 // variables to store user choice on button press
 const btnRock = document.getElementById('btn-rock');
@@ -42,32 +43,28 @@ function getComputerChoice() {
   }
 }
 
-// Calculate Score
+// Return Score
 function getScore(userScore, computerScore) {
-  return "You: " + userScore + " - " + computerScore + " Computer";
+  return "You " + userScore + " - " + computerScore + " Computer";
 }
 
 //Declare Final Scorecard
 function endOfGame(gameRounds) {
   if (gameRounds == 5) {
     if (userScore > computerScore) {
-      finalScore.textContent = "You won the game! " + getScore(userScore, computerScore);
-      newGame.textContent = "Start New Game - Pick an option!";
+      finalScore.textContent = "You won the game!";
       resetGame();
   
     } else if (userScore < computerScore) {
-      finalScore.textContent = "You Lost the game! " + getScore(userScore, computerScore)
-      newGame.textContent = "Start New Game - Pick an option!";
+      finalScore.textContent = "You Lost the game!";
       resetGame();
   
     } else {
-      finalScore.textContent = "Seriously? A tie? How Disappointing " + getScore(userScore, computerScore);
-      newGame.textContent = "Start New Game - Pick an option!";
+      finalScore.textContent = "Seriously? A tie? How Disappointing";
       resetGame();
     }
   } else {
     finalScore.textContent = "";
-    newGame.textContent = "";
   }
 }
 
@@ -82,15 +79,15 @@ function playRound(playerSelection, computerSelection) {
   //Player Choice : Rock
   if (playerChoice === "ROCK") {
     if (computerChoice === "ROCK") {
-      return "Round " + gameRounds + ": " + " Tie! You must try again! " + getScore(userScore, computerScore);
+      return "Round " + gameRounds + ": " + " Tie! You must try again!";
     } 
     else if (computerChoice === "PAPER") {
       computerScore += 1;
-      return "Round " + gameRounds + ": " + "You Lost! Paper beats Rock! " + getScore(userScore, computerScore);
+      return "Round " + gameRounds + ": " + "You Lost! Paper beats Rock!";
     } 
     else {
       userScore += 1;
-      return "Round " + gameRounds + ": " + "Congratulations! Rock destroys Scissors! " + getScore(userScore, computerScore);
+      return "Round " + gameRounds + ": " + "You won! Rock destroys Scissors!";
     }
   }
 
@@ -98,14 +95,14 @@ function playRound(playerSelection, computerSelection) {
   else if (playerChoice === "PAPER") {
     if (computerChoice === "ROCK") {
       userScore += 1;
-      return "Round " + gameRounds + ": " + "Congratulations! Paper smothered Rock to death! " + getScore(userScore, computerScore);
+      return "Round " + gameRounds + ": " + "You won! Paper smothered Rock to death!";
     } 
     else if (computerChoice === "PAPER") {
-      return "Round " + gameRounds + ": " + "Tie! You must try again! " + getScore(userScore, computerScore);
+      return "Round " + gameRounds + ": " + "Tie! You must try again!";
     } 
     else {
       computerScore += 1;
-      return "Round " + gameRounds + ": " + "You Lost! Scissors cut up Paper! " + getScore(userScore, computerScore);
+      return "Round " + gameRounds + ": " + "You Lost! Scissors cut up Paper!";
     }
   }
 
@@ -113,20 +110,31 @@ function playRound(playerSelection, computerSelection) {
   else if (playerChoice === "SCISSORS") {
     if (computerChoice === "ROCK") {
       computerScore += 1;
-      return "Round " + gameRounds + ": " + "You Lost! Rock destroys Scissors! " + getScore(userScore, computerScore);
+      return "Round " + gameRounds + ": " + "You Lost! Rock destroys Scissors!";
     } 
     else if (computerChoice === "PAPER") {
       userScore += 1;
-      return "Round " + gameRounds + ": " + "Congratulations! Scissors cut up Paper! " + getScore(userScore, computerScore);
+      return "Round " + gameRounds + ": " + "You won! Scissors cut up Paper!";
     } 
     else {
-      return "Round " + gameRounds + ": " + "Tie! You must try again! " + getScore(userScore, computerScore);
+      return "Round " + gameRounds + ": " + "Tie! You must try again!";
     }
   }
 }
 
 // Game function 
 function game() {
+
+  // Start New Game
+  newGame.addEventListener('click', () => {
+    userScore = 0;
+    computerScore = 0;
+    gameRounds = 1;
+    playerShow.textContent = "";
+    compShow.textContent = "";
+    para.textContent = "Round 1";
+    currentScore.textContent = "You 0 - 0 Computer";
+  })
 
   // Handling Rock selection on button press
   btnRock.addEventListener('click', () => {
@@ -135,6 +143,7 @@ function game() {
     playerShow.textContent = "Player's Choice: Rock";
     compShow.textContent = "Computer's Choice: " + computerChoice;
     para.textContent = playRound(playerSelection, computerChoice);
+    currentScore.textContent = getScore(userScore, computerScore);
     endOfGame(gameRounds);
     gameRounds += 1;
     resetRounds();
@@ -149,6 +158,7 @@ function game() {
     playerShow.textContent = "Player's Choice: Paper";
     compShow.textContent = "Computer's Choice: " + computerChoice;
     para.textContent = playRound(playerSelection, computerChoice);
+    currentScore.textContent = getScore(userScore, computerScore);
     endOfGame(gameRounds);
     gameRounds += 1;
     resetRounds();
@@ -162,6 +172,7 @@ function game() {
     playerShow.textContent = "Player's Choice: Scissors";
     compShow.textContent = "Computer's Choice: " + computerChoice;
     para.textContent = playRound(playerSelection, computerChoice);
+    currentScore.textContent = getScore(userScore, computerScore);
     endOfGame(gameRounds);
     gameRounds += 1;
     resetRounds();
