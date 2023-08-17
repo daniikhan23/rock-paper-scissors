@@ -121,7 +121,30 @@ body {
   text-align: center;
 }
 
-.main-section .container-fluid .row .col-2 {
-  align-items: center;
-  justify-content: center;
+.main-section .container-fluid .row .col-2 .fa-solid {
+  font-size: 2rem;
+  color: #72213e;
+  top: 0;
+  margin: auto 0;
+  line-height: 1.5;
+}
+
+.main-section .container-fluid .row .col-2 .fa-font:before{
+  content: none;
+}
+
+.main-section .container-fluid .container-score .fa-solid {
+  font-size: 2rem;
+  color: #72213e;
+  top: 0;
+  margin: auto 0;
+  line-height: 2.0;
+}
+
+.main-section .container-fluid .container-score .fa-font:before{
+  content: none;
+}
+
+.main-section .container-fluid .row .col-2{
+  margin: auto 0;
 }
