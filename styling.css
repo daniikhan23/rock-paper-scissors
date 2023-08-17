@@ -148,7 +148,10 @@ body {
   margin: auto 0;
 }
 
-
+.main-section .container-fluid .container-score .fa-solid .btn-new-game {
+  background-color: #72213e;
+  color: rgb(228,97,85);
+}
 
 /* Button Section */
 .button-section .container {
