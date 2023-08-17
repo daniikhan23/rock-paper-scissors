@@ -94,7 +94,7 @@ body {
 }
 
 .header-section .navbar-brand i {
-  font-size: 5rem;
+  font-size: 4rem;
   padding: 5rem 0;
 }
 
@@ -107,17 +107,16 @@ body {
 .main-section .container-fluid .img-fluid {
   border: 5px solid black;
   padding: 0;
-  height: 50rem;
 }
 
 .main-section .container-fluid .fa-solid {
-  font-size: 10rem;
+  font-size: 5rem;
   position: relative;
   top: -10rem;
 }
 
 .main-section .container-fluid .container-score {
-  margin: 5rem;
+  margin: 2.5rem;
   text-align: center;
 }
 
@@ -150,6 +149,10 @@ body {
 }
 
 /* Button Section */
+.button-section .container {
+  text-align: center;
+  margin-left: 10rem;
+}
 
 .button-section .container .row .col .btn-rock:hover {
   transform: scale(1.1);
