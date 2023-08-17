@@ -151,3 +151,26 @@ body {
 
 /* Button Section */
 
+.button-section .container .row .col .btn-rock:hover {
+  transform: scale(1.1);
+}
+
+.button-section .container .row .col .btn-rock:active {
+  transform: translateY(4px);
+}
+
+.button-section .container .row .col .btn-paper:hover {
+  transform: scale(1.1);
+}
+
+.button-section .container .row .col .btn-paper:active {
+  transform: translateY(4px);
+}
+
+.button-section .container .row .col .btn-scissors:hover {
+  transform: scale(1.1);
+}
+
+.button-section .container .row .col .btn-scissors:active {
+  transform: translateY(4px);
+}
