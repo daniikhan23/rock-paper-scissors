@@ -1,0 +1,87 @@
+/* On screens that are 900px wide or less, go from four columns to two columns */
+@media screen and (max-width: 900px) {
+  
+  /* Header Section */
+  
+  .header-section .navbar-brand i {
+    font-size: 3rem;
+  }
+
+  /* Main Section */
+  .main-section .container-fluid .container-score .fa-solid  {
+    font-size: 1.5rem;
+  }
+
+  .main-section .container-fluid .row .col-2 .fa-solid {
+    font-size: 1.5rem;
+  }
+
+  .main-section .container-fluid .fa-solid {
+    font-size: 3.5rem;
+  }
+
+  /* Button Section */
+  .button-section .container {
+    text-align: center;
+  }
+
+  .button-section .container .row .col img {
+    width: 7.5rem;
+    height: auto;
+  }
+
+  .button-section .container {
+    margin: 0 auto;
+  }
+}
+
+/* On screens that are 600px wide or less, go from four columns to two columns */
+@media screen and (max-width: 600px) {
+  .main-section .container-fluid .row .col-2 {
+    margin-top: 22.5rem;
+  }
+
+  .main-section .container-fluid .fa-solid {
+    top: -7.5rem;
+  }
+
+  .main-section .container-fluid .row .col-2 .fa-solid #player-choice {
+    position: relative;
+    left: 15rem;
+    margin-bottom: 2.5rem;
+  }
+  .main-section .container-fluid .row .col-2 .fa-solid #computer-choice {
+    position: relative;
+    right: 15rem;
+    margin-bottom: 2.5rem;
+  }
+}
+
+/* On screens that are 500px wide or less, go from four columns to two columns */
+@media screen and (max-width: 600px) {
+
+  .main-section .container-fluid .row .col-2 {
+    margin-top: 15rem;
+  }
+
+  .main-section .container-fluid .row .col-2 .fa-solid #player-choice {
+    position: relative;
+    left: 5rem;
+    margin-bottom: 2.5rem;
+  }
+  .main-section .container-fluid .row .col-2 .fa-solid #computer-choice {
+    position: relative;
+    right: 7.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .main-section .container-fluid .fa-solid {
+    top: -5rem;
+    font-size: 3rem;
+  }
+
+  .button-section .container .row .col img {
+    width: 5rem;
+    height: auto;
+  }
+}
